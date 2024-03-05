@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Image</title>
+</head>
+<body>
+    <h1>Download JPEG Image</h1>
+    <p>Click the button below to download the JPEG image.</p>
+    
+    <!-- Provide a button to trigger the download -->
+    <button id="downloadButton">Download Image</button>
+
+    <script>
+        // Function to trigger download when the button is clicked
+        document.getElementById('downloadButton').addEventListener('click', function() {
+            // URL of the image
+            var imageUrl = 'https://academics.siu.edu/computing-and-technology/_common/images/itec/itec-index-banner.jpg';
+            
+            // Create a temporary anchor element
+            var link = document.createElement('a');
+            link.href = imageUrl;
+            link.download = 'image.jpg'; // Filename for the downloaded file
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
